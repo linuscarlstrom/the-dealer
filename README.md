@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# The dealer
+
+This application is a small web the lets the user randomly draw two poker hands and rank them.
 
 ## Getting Started
 
-First, run the development server:
+To start the application locally follow these steps;
+
+### Dependency installation
+
+From the root, install the required dependencies by executing the follow command in you terminal;
+
+```bash
+npm i
+```
+
+### Run a local instance
+
+To run a local instance of the app you can either, run the development environment or build and the run a production ready version.
+
+#### Development
+
+For running the development environment, with hot-reloads and so on;
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Production ready
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+For running the production ready version;
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm run build && npm run start
+```
 
-## Learn More
+When either of the commands is executed, open [http://localhost:3000](http://localhost:3000) with your browser to go to the application.
 
-To learn more about Next.js, take a look at the following resources:
+#### API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+There's also an API with two endpoints within the app itself.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+##### Draw cards
 
-## Deploy on Vercel
+Draw cards will return an array with two random generated poker hands. To access this endpoint go to [http://localhost:3000/api/draw-hands](http://localhost:3000/api/draw-hands).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+##### Rank hands
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Rank hands takes data for two different hands as query parameters. To access this endpoint go to [http://localhost:3000/api/rank-hands](http://localhost:3000/api/rank-hands). Here's an example request with hands defined; [http://localhost:3000/api/rank-hands?handOne=3♥,7♥,3♣,J♥,3♠&handTwo=J♣,T♥,3♦,K♠,5♠](http://localhost:3000/api/rank-hands?handOne=3♥,7♥,3♣,J♥,3♠&handTwo=J♣,T♥,3♦,K♠,5♠).
+
+### Testing
+
+There are some small tests in the project, that tests basic Poker logic. To run the tests execute the following command;
+
+```bash
+npm t
+```
