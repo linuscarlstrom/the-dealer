@@ -1,0 +1,41 @@
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+// Prepare for state handling
+.card p {
+	transition: color 0.2s;
+	animation: fadeIn 0.5s;
+}
+
+.button {
+	p {
+		display: inline;
+		animation: fadeIn 0.5s;
+	}
+}
+
+// State animations
+.refreshing-game {
+	.card {
+		.value-area p,
+		.suite-area p {
+			color: rgba(0, 0, 0, 0);
+		}
+	}
+
+	.button.deal {
+		color: rgba(0, 0, 0, 0);
+	}
+}
+
+.ranking-game {
+	.button.rank {
+		color: rgba(0, 0, 0, 0);
+	}
+}

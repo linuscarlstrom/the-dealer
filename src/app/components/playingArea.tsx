@@ -4,14 +4,19 @@ import { useGame, useRank } from '../hooks'
 
 import PlayerArea from './playerArea'
 import GameActions from './gameActions'
+import Spinner from './spinner'
 
 export default function PlayingArea() {
-	const { data, loading, newGame } = useGame()
-	const { rankings, rankHands, clearRankings } = useRank()
+	const { data, loading, refreshing, newGame } = useGame()
+	const { rankings, rankHands, clearRankings, loading: loadingRanking } = useRank()
 
 	const onNewGame = () => {
 		clearRankings()
 		newGame()
+
+		// Clear winning cards on new game
+		// to simply animate the card back into the hand
+		rankings.winningCards = []
 	}
 
 	const onRank = () => {
@@ -19,10 +24,10 @@ export default function PlayingArea() {
 		if (hands) rankHands(hands)
 	}
 
-	if (loading || !data.handOne || !data.handTwo) return <></>
+	if (loading || !data.handOne || !data.handTwo) return <Spinner />
 
 	return (
-		<>
+		<div className={`${refreshing ? 'refreshing-game' : ''} ${loadingRanking ? 'ranking-game' : ''}`}>
 			<PlayerArea
 				players={[
 					{ id: 'handOne', hand: data.handOne },
@@ -33,6 +38,6 @@ export default function PlayingArea() {
 				winningCards={rankings?.winningCards}
 			/>
 			<GameActions onNewGamePress={onNewGame} onRankPress={onRank} rankDisabled={rankings.winner ? true : false} />
-		</>
+		</div>
 	)
 }

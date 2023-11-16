@@ -12,7 +12,6 @@
 	line-height: 1;
 	user-select: none;
 
-	// Add color to the suites
 	&.♠ p,
 	&.♣ p {
 		color: #000;
@@ -21,21 +20,6 @@
 	&.♥ p,
 	&.♦ p {
 		color: #cb2e4b;
-	}
-
-	// Add more fun colors to the larger suite icon
-	&.♥ .suite-area p,
-	&.♦ .suite-area p {
-		background: conic-gradient(at 50% 100%, #d43350, #cb2e4b, #cb2e4b);
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-
-	&.♠ .suite-area p,
-	&.♣ .suite-area p {
-		background: conic-gradient(at 50% 100%, #282a2e, #000, #000);
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
 	}
 }
 
@@ -54,7 +38,6 @@
 	}
 }
 
-// Large suite representation
 .suite-area {
 	display: flex;
 	align-self: flex-end;

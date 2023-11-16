@@ -6,11 +6,12 @@ import fetcher from '../utils/fetcher'
 export function useGame(): {
 	data: Partial<DrawHandsResponse>
 	loading: boolean
+	refreshing: boolean
 	newGame: KeyedMutator<DrawHandsResponse>
 } {
-	const { data, isLoading, mutate } = useSWR<DrawHandsResponse, Error>('/api/draw-hands', fetcher, {
+	const { data, isLoading, isValidating, mutate } = useSWR<DrawHandsResponse, Error>('/api/draw-hands', fetcher, {
 		revalidateOnFocus: false
 	})
 
-	return { data: data || {}, loading: isLoading || !data, newGame: mutate }
+	return { data: data || {}, loading: isLoading || !data, refreshing: isValidating, newGame: mutate }
 }

@@ -8,6 +8,7 @@ export function useRank(): {
 	rankings: Partial<RankHandsResponse>
 	rankHands: (hands: string[][]) => void
 	clearRankings: () => void
+	loading: boolean
 } {
 	const [shouldFetch, setShouldFetch] = useState<boolean>(false)
 	const [hands, setHands] = useState<string[][]>()
@@ -21,11 +22,11 @@ export function useRank(): {
 		setShouldFetch(false)
 	}
 
-	const { data } = useSWR<RankHandsResponse, Error>(
+	const { data, isLoading } = useSWR<RankHandsResponse, Error>(
 		shouldFetch ? `/api/rank-hands?handOne=${hands?.[0].join(',')}&handTwo=${hands?.[1].join(',')}` : null,
 		fetcher,
 		{ revalidateOnFocus: false }
 	)
 
-	return { rankings: data || {}, rankHands, clearRankings }
+	return { rankings: data || {}, rankHands, clearRankings, loading: isLoading }
 }

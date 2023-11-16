@@ -8,11 +8,11 @@ export default function GameActions({ onRankPress, onNewGamePress, rankDisabled 
 	return (
 		<div className="game-actions">
 			<div className="button-area">
-				<button className="button" onClick={onRankPress} disabled={rankDisabled}>
-					Rank
+				<button className="button rank" onClick={onRankPress} disabled={rankDisabled}>
+					<p>Rank</p>
 				</button>
-				<button className="button" onClick={onNewGamePress}>
-					Deal
+				<button className="button deal" onClick={onNewGamePress}>
+					<p>Deal</p>
 				</button>
 			</div>
 		</div>
