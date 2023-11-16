@@ -1,24 +1,30 @@
 {
-  "name": "the-dealer",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.2"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.2"
-  }
+	"name": "the-dealer",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"test": "node --import tsx --test ./src/**/*.test.ts",
+		"coverage": "c8 node --import tsx --test-reporter dot --test ./src/**/*.test.ts"
+	},
+	"dependencies": {
+		"next": "14.0.2",
+		"react": "^18",
+		"react-dom": "^18",
+		"swr": "^2.2.4"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"c8": "^8",
+		"eslint": "^8",
+		"eslint-config-next": "14.0.2",
+		"sass": "^1.69.5",
+		"tsx": "^4",
+		"typescript": "^5"
+	}
 }
