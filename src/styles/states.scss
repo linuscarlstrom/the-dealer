@@ -13,13 +13,6 @@
 	animation: fadeIn 0.5s;
 }
 
-.button {
-	p {
-		display: inline;
-		animation: fadeIn 0.5s;
-	}
-}
-
 // State animations
 .refreshing-game {
 	.card {
@@ -30,12 +23,14 @@
 	}
 
 	.button.deal {
-		color: rgba(0, 0, 0, 0);
+		color: rgba(var((--foreground-rgb)), 0.35);
+		cursor: default;
 	}
 }
 
 .ranking-game {
 	.button.rank {
-		color: rgba(0, 0, 0, 0);
+		color: rgba(var((--foreground-rgb)), 0.35);
+		cursor: default;
 	}
 }
