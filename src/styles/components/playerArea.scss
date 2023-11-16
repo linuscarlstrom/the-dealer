@@ -1,0 +1,36 @@
+.player-area {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+
+	// Sadly we need to mess with fixed heights
+	// since we're using absolute positioning for the hand
+	.player {
+		height: 40rem;
+	}
+
+	.scoring {
+		height: 10rem;
+		font-weight: 600;
+	}
+
+	.hand {
+		height: 30rem;
+	}
+}
+
+.scoring {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	text-transform: capitalize;
+	font-size: 3rem;
+
+	opacity: 0;
+	transition: opacity 0.15s;
+}
+
+.winner .scoring {
+	opacity: 1;
+}

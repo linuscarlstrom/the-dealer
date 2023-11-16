@@ -1,0 +1,41 @@
+.theme-toggle {
+	position: absolute;
+	height: 3.6rem;
+	width: 10rem;
+	gap: 1rem;
+	margin: 2rem 0 0 2rem;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+	background: rgba(var(--interactive-background-rgb), 0.05);
+	border: solid 1px rgba(var(--interactive-background-rgb), 0.1);
+	border-radius: 3.6rem;
+
+	// Force theme toggle to be on top in small windows...
+	z-index: 1;
+}
+
+.toggle-option {
+	border-radius: 5rem;
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgba(0, 0, 0, 0.05);
+
+	img {
+		filter: brightness(0) invert(1) opacity(var(--theme-toggle-icon-opacity));
+
+		&:hover {
+			filter: brightness(0) invert(1) opacity(0.8);
+		}
+	}
+
+	&.active img {
+		filter: brightness(0) invert(1) opacity(1);
+	}
+}

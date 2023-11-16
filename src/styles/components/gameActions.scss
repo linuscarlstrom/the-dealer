@@ -1,0 +1,37 @@
+.game-actions {
+	padding: 8rem 0 6rem;
+}
+
+.button-area {
+	display: flex;
+	justify-content: center;
+}
+
+.button {
+	font-size: 2rem;
+	line-height: 7rem;
+	background: rgba(var(--interactive-background-rgb), 0.05);
+	border: 1px solid rgba(var(--interactive-background-rgb), 0.1);
+	color: rgb(var((--foreground-rgb)));
+	font-weight: 600;
+
+	cursor: pointer;
+	transition: color 0.2s;
+
+	&:disabled {
+		color: rgba(var((--foreground-rgb)), 0.35);
+		cursor: default;
+	}
+
+	&:first-child {
+		padding: 0 2rem 0 4rem;
+		border-radius: 7rem 0 0 7rem;
+		border-right: 0px;
+	}
+
+	&:last-child {
+		padding: 0 4rem 0 2rem;
+		border-radius: 0 7rem 7rem 0;
+		border-left: 0px;
+	}
+}

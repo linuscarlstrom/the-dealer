@@ -1,0 +1,37 @@
+.hand {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 50rem;
+
+	// Stack cards to make a hand
+	.card {
+		position: absolute;
+		transform-origin: center 145%;
+		transition: scale 0.2s, margin-top 0.2s;
+		box-shadow: 0 0 3rem transparentize(black, 0.8);
+
+		&:hover {
+			z-index: 100;
+			scale: 1.15;
+		}
+
+		@for $i from 1 through 5 {
+			&:nth-child(#{$i}) {
+				transform: rotate(-60deg + $i * 20);
+			}
+		}
+	}
+
+	// Highlight cards in hand
+	.highlight {
+		scale: 1.2;
+		pointer-events: none;
+
+		@for $i from 1 through 5 {
+			&:nth-child(#{$i}) {
+				z-index: 5 + $i;
+			}
+		}
+	}
+}
