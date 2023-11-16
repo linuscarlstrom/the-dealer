@@ -11,7 +11,6 @@ type PlayerAreaProps = {
 }
 
 export default function PlayerArea({ players, winner, winningHand, winningCards = [] }: PlayerAreaProps) {
-	console.log('winner', winner)
 	return (
 		<div className="player-area">
 			{players.map(({ id, hand }) => (
