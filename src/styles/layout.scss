@@ -74,7 +74,7 @@ main {
 
 @media only screen and (max-width: 580px) {
 	html {
-		font-size: 25%;
+		font-size: 4px;
 		.theme-toggle {
 			display: none;
 		}
@@ -83,10 +83,15 @@ main {
 
 @media (orientation: landscape) and (max-height: 550px) {
 	html {
-		font-size: 50%;
+		font-size: 5px;
 
 		.game-actions {
-			padding: 3rem 0 2rem;
+			padding: 15px 0 15px;
+		}
+
+		img {
+			height: 10px;
+			width: 10px;
 		}
 	}
 }
