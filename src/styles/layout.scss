@@ -6,6 +6,7 @@
 
 html {
 	font-size: 62.5%;
+	transition: font-size 0.2s;
 }
 
 html,
@@ -29,5 +30,63 @@ main {
 @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
+	}
+}
+
+// Quick "responsiveness" enough to make it at least work
+@media only screen and (max-width: 1020px) {
+	html {
+		font-size: 55%;
+	}
+}
+
+@media only screen and (max-width: 940px) {
+	html {
+		font-size: 50%;
+	}
+}
+
+@media only screen and (max-width: 840px) {
+	html {
+		font-size: 45%;
+		img {
+			height: 14px;
+			width: 14px;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	html {
+		font-size: 40%;
+		img {
+			height: 12px;
+			width: 12px;
+		}
+	}
+}
+
+@media only screen and (max-width: 680px) {
+	html {
+		font-size: 35%;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	html {
+		font-size: 25%;
+		.theme-toggle {
+			display: none;
+		}
+	}
+}
+
+@media (orientation: landscape) and (max-height: 550px) {
+	html {
+		font-size: 50%;
+
+		.game-actions {
+			padding: 3rem 0 2rem;
+		}
 	}
 }
