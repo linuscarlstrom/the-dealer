@@ -55,7 +55,7 @@ export class Dealer {
 			break
 		}
 
-		const winningHand = winner === 'handOne' ? handA.ranking.rankName : handB.ranking.rankName + '-with-kicker'
+		const winningHand = (winner === 'handOne' ? handA.ranking.rankName : handB.ranking.rankName) + '-with-kicker'
 		const winningCards = winner === 'handOne' ? handA.ranking.bestHand : handB.ranking.bestHand
 
 		// Add the used kicker to the hand
